@@ -17,6 +17,7 @@ addButton.addEventListener("click", (e) => {
     e.preventDefault(); //This prevent the submmission done by the form tag
     todo = todoInput.value;
     if (todo.length > 0){
-        todoList.push({id: uuid})
+        todoList.push({id: uuid, todo: todo, isCompleted: false})
     }
+    console.log(todoList)
 })
