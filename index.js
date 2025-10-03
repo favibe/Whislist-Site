@@ -3,9 +3,13 @@ let addButton = document.querySelector(".button");
 let todo = "";
 let todoList = [];
 
-//A function for cfreating unique id
+//function for cfreating unique id
 function uuid() {
-    return 
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (param) {
+        let number = Math.random() * 16 | 0;
+        let randomNumber = param == 'x' ? number : (number & 0x3 | 0x8);
+        return randomNumber.toString(16);
+    });
 }
 
 
