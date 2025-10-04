@@ -1,47 +1,57 @@
+/* ====== GENERAL LAYOUT ====== */
 body {
-    background-color: blueviolet;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    margin: 0;
+  background-color: blueviolet;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
+/* ====== MAIN CONTAINER ====== */
 .main {
   background: white;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 10px black;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   max-width: 400px;
   width: 100%;
-  margin-top: 50px; /* pushes it down */
+  margin-top: 50px;
 }
-
 
 h1 {
   margin-bottom: 12px;
   color: #333;
+  text-align: center;
 }
 
+/* ====== FORM ====== */
 .todo-form {
   display: flex;
   gap: 10px;
-  margin-bottom: 15px; /* space below form */
+  margin-bottom: 15px;
 }
 
 input {
-  flex: 1; /* makes input grow */
+  flex: 1;
   padding: 10px;
-  border: 0;
+  border: 1px solid #ccc;
   font-size: 16px;
   border-radius: 4px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #7b42f6;
+  box-shadow: 0 0 4px rgba(123, 66, 246, 0.4);
 }
 
 button {
   padding: 10px 15px;
   color: white;
   background-color: red;
-  border: 0;
+  border: none;
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
@@ -52,18 +62,58 @@ button:hover {
   background-color: darkred;
 }
 
-
+/* ====== TODO LIST ====== */
 .todo-container {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* space between items */
+  gap: 10px;
 }
 
-.todo-item {
-  background: #f9f9f9;
-  padding: 10px;
-  border-radius: 4px;
+
+.todo {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #f9f9f9;
+  padding: 10px 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background 0.2s;
+}
+
+.todo:hover {
+  background: #f0f0f0;
+}
+
+.todo-text {
+  flex: 1;
+  margin-left: 8px;
+  word-wrap: break-word;
+  cursor: pointer;
+}
+
+/* ====== CHECKBOX & DELETE ====== */
+.t-checkbox {
+  cursor: pointer;
+  accent-color: #7b42f6; 
+}
+
+.del-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #b33a3a; /* subtle muted red */
+  transition: color 0.2s, transform 0.1s ease;
+}
+
+.del-btn:hover {
+  color: #d55b5b; /* soft warm red on hover */
+  transform: scale(1.1); /* small hover lift */
+}
+
+
+.checked-todo {
+  text-decoration: line-through;
+  color: #888;
 }
